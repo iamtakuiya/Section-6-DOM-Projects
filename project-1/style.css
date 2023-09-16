@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.center-text {
+    text-align: center;
+}
+
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    box-shadow: 0 2px 0 3px hsl(255, 255, 10%);
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+menu {
+    list-style: none;
+}
+
+li {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem;
+}
+
+div {
+    width: 100%;
+}
+
+.nav {
+    display: grid;
+    box-shadow: 0 5px 3px hsl(0, 0%, 80%);
+    margin-bottom: 2.4rem;
+}
+
+.nav--center {
+
+}
+
+.nav-link {
+    padding-inline: calc(0.8rem * 2);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.nav-link li a {
+    display: block;
+    box-sizing: border-box;
+    color: #000;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border: 2px solid transparent;
+    transition: all 0.1s ease-in;
+}
+
+.nav-link li:hover a {
+    border: 2px solid #000;
+}
+
+main {
+    height: 100%;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    gap: 2.3rem;
+    padding-block: 2rem;
+    
+}
+
+
+h2 {
+    padding: 1rem;
+    background-color: #111;
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.color {
+    color: #ca95fb;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+}
+
+.btn--hero {
+    border: 1px solid #000;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1.2;
+    font-weight: bold;
+}

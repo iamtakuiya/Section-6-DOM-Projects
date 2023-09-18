@@ -26,3 +26,15 @@ footer nav {
 menu {
     list-style: none;
 }
+
+
+
+
+main {
+    height: 100%;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    gap: 2.3rem;
+    padding-block: 2rem; 
+}

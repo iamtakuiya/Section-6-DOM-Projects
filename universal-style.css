@@ -4,11 +4,9 @@
     box-sizing: border-box;
 }
 
-.center-text {
-    text-align: center;
-}
-
-
+/* ===============================
+Universal style
+=================================*/
 footer {
     position: fixed;
     bottom: 1%;

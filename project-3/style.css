@@ -1,0 +1,146 @@
+:root {
+	--primary: hsl(195, 100%, 50%);
+	--secondary: hsl(195, 100%, 70%);
+	--tertiary: hsl(195 100% 35%);
+}
+
+.wrapper {
+	background-color: hsla(0, 0%, 100%, 0.754);
+}
+
+.container {
+	padding: 1.5rem 3rem;
+	max-width: 500px;
+	display: grid;
+	place-items: center;
+	gap: 2.3rem;
+	box-shadow: 0 0 15px 8px hsl(0, 0%, 85%);
+}
+
+.title {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	// line-height: 2;
+	border-bottom: 5px solid var(--primary);
+}
+.title h1 {
+	font-size: 3.2rem;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.review-card {
+	display: grid;
+	place-items: center;
+}
+
+.review-card__profile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.img-container {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	z-index: 1;
+}
+
+.img--collapse {
+	border-radius: 50%;
+	aspect-ratio: 1;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.img-container::before {
+	display: block;
+	content: '';
+	width: 100%;
+	height: 100%;
+	background: var(--primary);
+	border-radius: 50%;
+	position: absolute;
+	top: -3%;
+	left: 6%;
+	aspect-ratio: 1;
+	z-index: -1;
+}
+
+.author {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.role {
+	margin-top: -1rem;
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	color: var(--secondary);
+}
+
+.review--card__text {
+}
+
+.review--card__text p {
+	font-size: 1.1rem;
+	line-height: 1.1;
+	font-weight: 400;
+}
+
+.btn-container {
+	display: grid;
+	place-items: center;
+}
+
+.btn-container__slider {
+	display: flex;
+	justify-content: center;
+}
+
+.btn {
+	outline: none;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.btn:hover {
+	transform: scale(0.98);
+	color: var(--tertiary);
+}
+
+.btn--prev,
+.btn--next {
+	font-size: 1rem;
+	display: inline-block;
+	border-radius: 50%;
+	padding: 0.5rem;
+}
+
+svg {
+	stroke: var(--secondary);
+	width: 35px;
+	height: 35px;
+}
+.btn--next {
+}
+
+.btn-container__random {
+}
+
+.btn--random {
+	border: 3px solid var(--secondary);
+	border-radius: 5%;
+	color: var(--secondary);
+	padding: 0.5rem 2rem;
+}

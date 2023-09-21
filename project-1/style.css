@@ -79,8 +79,7 @@ main {
     place-content: center;
     place-items: center;
     gap: 2.3rem;
-    padding-block: 2rem;
-    
+    padding-block: 2rem; 
 }
 
 

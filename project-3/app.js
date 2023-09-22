@@ -4,10 +4,12 @@
  * Data stor the array
  * Trick to index
  * id for random text
+ * Index is countable and access the reviewers index. Like reviewers[index]
  */
 
 const btns = document.querySelectorAll('.btn');
 
+// data
 const reviewers = [
 	{
 		gender: 'female',
@@ -65,8 +67,7 @@ function random() {
 }
 
 let index = 0;
-// reviewers.findIndex(obj => obj.id);
-// index = reviewers
+
 
 btns.forEach(btn => {
 	btn.addEventListener('click', e => {

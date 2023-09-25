@@ -2,7 +2,7 @@ const toggleBtn = document.querySelector('.toggle');
 const menu = document.querySelector('.navbar__nav-links');
 
 toggleBtn.addEventListener('click', () => {
-	console.log(menu.classList.contains('link-show'));
+	// console.log(menu.classList.contains('link-show'));
 	showMenu();
 });
 function showMenu() {
@@ -24,6 +24,7 @@ window.addEventListener('resize', e => {
 function checkScreenWidth(screen) {
 	if (screen >= 800) {
 		toggleBtn.classList.add('toggle--hide');
+		menu.classList.remove('link-show');
 	} else {
 		toggleBtn.classList.remove('toggle--hide');
 	}

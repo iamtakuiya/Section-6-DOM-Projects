@@ -3,11 +3,61 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" integrity="sha512-oAvZuuYVzkcTc2dH5z1ZJup5OmSQ000qlfRvuoTTiyTBjwX1faoyearj8KdMq0LgsBTHMrRuMek7s+CxF8yE+w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="../universal-style.css" />
-		<link rel="stylesheet" href="style.css" />
-		<title>Document</title>
+		<link rel="stylesheet" href="./styles/style.css" />
+		<title>Navbar Project</title>
+
+		<style></style>
 	</head>
 	<body>
+		<section class="header flex flex--center-between shadow">
+			<h2 class="header__title">Navbar <span>Project</span> myself</h2>
+
+			<!-- Menu links -->
+			<nav class="header__nav hide--menu">
+				<menu class="header__list flex">
+					<li class="header__list-item">
+						<a href="index.html">Home</a>
+					</li>
+					<li class="header__list-item">
+						<a href="tutorial.html">Tutorial</a>
+					</li>
+					<li class="header__list-item">
+						<a href="review.html">Review</a>
+					</li>
+					<li class="header__list-item">
+						<a href="#">Contact</a>
+					</li>
+				</menu>
+			</nav>
+
+			<!-- Social -->
+			<ul class="header__social flex flex--row flex--center mobile--none">
+				<li class="header__social-link">
+					<a href="#"><i class="bi bi-facebook"></i></a>
+				</li>
+				<li class="header__social-link">
+					<a href="#"><i class="bi bi-twitter-x"></i></a>
+				</li>
+				<li class="header__social-link">
+					<a href="#"><i class="bi bi-behance"></i></a>
+				</li>
+				<li class="header__social-link">
+					<a href="#"><i class="bi bi-linkedin"></i></a>
+				</li>
+				<li class="header__social-link">
+					<a href="#"><i class="bi bi-discord"></i></a>
+				</li>
+			</ul>
+
+			<!-- Mobile menu -->
+			<div class="mobile--show">
+				<button class="btn btn--menu">
+					<i class="bi bi-list"></i>
+				</button>
+			</div>
+		</section>
 
 		<footer>
 			<nav>
@@ -16,6 +66,6 @@
 				</menu>
 			</nav>
 		</footer>
-		<script src="app.js"></script>
+		<script src="./js/app.js"></script>
 	</body>
 </html>

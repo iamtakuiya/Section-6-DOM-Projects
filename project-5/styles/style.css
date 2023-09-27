@@ -1,0 +1,141 @@
+/* sidebar header */
+.sidebar {
+	background: hsl(0, 0%, 95%);
+	display: grid;
+	position: fixed;
+	top: 0;
+	left: 0;
+	transform: translateX(-100%);
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: var(--tr--30ms);
+}
+
+.sidebar--show {
+	transform: translateX(0);
+}
+
+@media screen and (min-width: 610px) {
+	.sidebar {
+		width: 40%;
+	}
+}
+
+.sidebar__header {
+	height: auto;
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.sidebar__logo {
+	font-size: 1.875rem;
+	text-transform: uppercase;
+	display: grid;
+	place-content: center;
+}
+.btn--close {
+	color: hsl(30, 100%, 50%);
+	transform-origin: center center;
+	transition: all 0.2s linear;
+}
+
+i {
+	padding: 0.5rem 0.25rem;
+	font-size: 1.8rem;
+}
+.btn--close:is(:hover) {
+	transform: rotate(180deg);
+}
+
+/* Menu */
+.nav {
+	height: 80vh;
+}
+.nav__menu {
+	padding: 2rem 1rem;
+	gap: 2rem;
+}
+
+.nav__link {
+	height: 100%;
+	padding: 1rem 0;
+}
+.nav__link a {
+	text-decoration: none;
+	color: hsl(0, 0%, 14%);
+	font-size: 1.625rem;
+	display: block;
+	transition: all 0.2s ease-in;
+}
+
+.nav__link:is(:hover) a {
+	transform: translateX(10px);
+	color: hsl(0, 0%, 25%);
+}
+
+/* Socials */
+.social {
+	height: auto;
+	display: grid;
+	place-items: center;
+}
+.social__links {
+	padding-block: 0.8rem;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+.social__link {
+	list-style-type: none;
+}
+.social__link a {
+	color: hsl(230, 100%, 70%);
+	transition: all 0.3s ease;
+}
+.social__link:is(:hover) a {
+	color: hsl(230, 100%, 58%);
+}
+.social__link a i {
+}
+
+/* Main content */
+.container--main {
+	position: relative;
+	display: flex;
+	align-items: start;
+	justify-content: flex-end;
+	background-color: hsl(0, 0%, 90%);
+}
+
+.btn--toggle {
+	color: hsl(240, 100%, 64%);
+	transition: all 0.2s ease;
+}
+.btn--toggle i {
+	padding: 0.5rem 0.25rem;
+	font-size: 1.5rem;
+	animation: pulse 0.8s linear alternate infinite;
+}
+
+.btn--toggle:is(:hover, :active) {
+	transform: scale(0.97) rotate(90deg);
+}
+
+// @media screen and (max-width: 610px) {
+// 	.btn--toggle {
+// 		z-index: -1;
+// 	}
+// }
+
+@keyframes pulse {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.3);
+	}
+}

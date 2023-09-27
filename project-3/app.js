@@ -77,6 +77,7 @@ btns.forEach(btn => {
 
 		if (e.target === nextBtn) {
 			index++;
+			// The same as index = reviewers.length - 1
 			if (index >= reviewers.length) {
 				index = 0;
 			}

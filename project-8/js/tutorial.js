@@ -84,8 +84,12 @@ const menu = [
 const menuContainer = document.querySelector('.menu-container');
 
 window.addEventListener('DOMContentLoaded', function () {
+	displayMenuItems(menu);
+});
+
+function displayMenuItems(menuItems) {
 	// map() get the menu item individually
-	let displayMenuItems = menu.map(function (props) {
+	let displayMenuItems = menuItems.map(function (props) {
 		// return console.log(`<div>${props.title}</div>`);
 		return `
       <article class="menu-item">
@@ -102,4 +106,4 @@ window.addEventListener('DOMContentLoaded', function () {
 	});
 	displayMenuItems = displayMenuItems.join('');
 	menuContainer.innerHTML = displayMenuItems;
-});
+}

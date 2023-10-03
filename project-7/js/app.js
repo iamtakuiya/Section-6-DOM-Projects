@@ -26,10 +26,6 @@ questions.forEach(question => {
 		// Toggle class list by selecting array index 0 or 1
 		buttonIcons.forEach(btn => btn.classList.toggle('show'));
 
-		if (currentQuestion) {
-			console.log(currentQuestion.nextElementSibling);
-		}
-
 		// check text whether match or not current target and text
 
 		text.classList.toggle('show');

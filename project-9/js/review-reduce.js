@@ -81,72 +81,24 @@ const menu = [
 	}
 ];
 
-const menuContainer = document.querySelector('.menu-container');
-const filterBtnContainer = document.querySelector('.btn-container--filter');
+/**
+ * Todo
+ * Access menu and reduce to push new
+ * set init as all
+ * set accu values and current item
+ */
 
-window.addEventListener('DOMContentLoaded', function () {
-	displayMenuItems(menu);
-	displayMenuButtons();
-});
-
-function displayMenuItems(menuItems) {
-	// map() get the menu item individually
-	let displayMenuItems = menuItems.map(function (props) {
-		// return console.log(`<div>${props.title}</div>`);
-
-		return `
-      <article class="menu-item">
-        <img src="${props.img}" alt="menu item" class="photo" />
-        <div class="item-info">
-          <header>
-            <h4>${props.title}</h4>
-            <h4 class="price">${props.price}</h4>
-          </header>
-          <p class="item-text">${props.desc}</p>
-        </div>
-      </article>
-    `;
-	});
-	displayMenuItems = displayMenuItems.join('');
-	menuContainer.innerHTML = displayMenuItems;
-}
-
-function displayMenuButtons() {
-	const categories = menu.reduce(
-		function (values, item) {
-			if (!values.includes(item.category)) {
-				values.push(item.category);
+window.addEventListener('DOMContentLoaded', () => {
+	// console.log(menu);
+	const updateCategory = menu.reduce(
+		(accuValues, currItem) => {
+			if (!accuValues.includes(currItem.category)) {
+				accuValues.push(currItem.category);
 			}
-			return values;
+			console.log(accuValues, currItem);
+			return accuValues;
 		},
 		['all']
 	);
-	// console.log(categories);
-	const categoryBtn = categories
-		.map(category => {
-			return `
-				<button class="btn btn--filter" type="button" data-id=${category}>${category}</button>
-		`;
-		})
-		.join('');
-	filterBtnContainer.innerHTML = categoryBtn;
-	const filterBtns = document.querySelectorAll('.btn--filter');
-	console.log(filterBtns);
-
-	filterBtns.forEach(btn => {
-		btn.addEventListener('click', function (e) {
-			const category = e.currentTarget.dataset.id;
-			const matchingItem = menu.filter(function (menuItem) {
-				if (menuItem.category === category) {
-					return menuItem; // return matching menuItem, not all
-				}
-			});
-			if (category === 'all') {
-				displayMenuItems(menu);
-			} else {
-				displayMenuItems(matchingItem);
-			}
-		});
-	});
-	// console.log(categoryBtn);
-}
+	console.log(updateCategory);
+});

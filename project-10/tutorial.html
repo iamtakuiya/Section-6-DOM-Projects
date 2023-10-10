@@ -11,6 +11,12 @@
 		<style></style>
 	</head>
 	<body>
+		<!-- preloader -->
+		<div class="preloader">
+			<img src="./asset/preloader.gif" alt="pre loader" />
+		</div>
+		<!-- /preloader -->
+
 		<header>
 			<!-- Menu -->
 			<nav class="nav">
@@ -28,13 +34,19 @@
 			</nav>
 		</header>
 		<main class="container">
-			<video class="video" controls autoplay muted loop>
+			<video class="video" autoplay muted loop>
 				<source src="./asset/mp4/video-1.mp4" type="video/mp4" />
 			</video>
 			<h1>Project 10 Video: Tutorial</h1>
 
 			<!-- switch -->
-			<button class="switch-bt"><span>play</span><span>pause</span></button>
+			<div class="switch">
+				<button class="switch-btn">
+					<span>play</span>
+					<span>pause</span>
+				</button>
+				<span class="switch-btn__cover"></span>
+			</div>
 		</main>
 
 		<footer>

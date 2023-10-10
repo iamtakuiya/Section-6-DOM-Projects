@@ -1,0 +1,22 @@
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	animation: slideOut 750ms ease-out forwards 1500ms;
+}
+
+@keyframes slideOut {
+	from {
+		top: 0;
+	}
+	to {
+		top: 150%;
+	}
+}
+
+.preloader--loaded-end {
+	animation: slideOut 750ms ease-out forwards 1500ms;
+}

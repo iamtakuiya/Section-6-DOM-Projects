@@ -1,0 +1,8 @@
+.dynamic__container {
+	background: lime;
+	height: 0;
+}
+
+.dynamic__box {
+	height: 100px;
+}

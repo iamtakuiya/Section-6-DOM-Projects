@@ -202,10 +202,27 @@ function editItem(e) {
 // ****** LOCAL STORAGE ******
 function addToLocalStorage(...props) {
 	console.log('added to local storage', props[0], props[1]);
+	const id = props[0];
+	const value = props[1];
+	const grocery = { id, value };
+	// Fetch the item data
+	let items = localStorage.getItem('list')
+		? JSON.parse(localStorage.getItem('list'))
+		: [];
+	console.log(items);
+	// push the html template string
+	items.push(grocery);
+	localStorage.setItem('list', JSON.stringify(items));
 }
 
 function removeFromStorage(id) {}
 function editLocalStorage(id, value) {}
+
+// Test setup localStorage
+localStorage.setItem('orange', JSON.stringify(['item', 'Item2']));
+const oranges = JSON.parse(localStorage.getItem('orange'));
+console.log(oranges);
+localStorage.removeItem('orange');
 
 // ****** SETUP ITEMS ******
 

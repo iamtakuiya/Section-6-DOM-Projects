@@ -12,11 +12,12 @@ class Selector {
 	}
 
 	id(selector) {
-		return document.getElementById(selector.slice(1)); // Remove the "#" from the ID becausee selecting ID
+		return document.getElementById(selector.slice(1)); // Remove the "#" from the ID because selecting ID
 	}
 
 	log() {
 		console.log(this.element);
+		// console.table(this.element);
 	}
 }
 
@@ -40,7 +41,7 @@ let editId = '';
 
 // submit form
 form.addEventListener('submit', addItem);
-clrBtn.addEventListener('click', clearItem);
+clrBtn.addEventListener('click', clearItems);
 
 // ****** END EVENT LISTENERS ******
 // ==============================================
@@ -66,15 +67,30 @@ function addItem(e) {
 				<p class="title">${value}</p>
             <div class="btn-container">
               <!-- edit btn -->
-              <button type="button" class="edit-btn">
+              <button type="button" class="btn edit-btn">
                 <i class="fas fa-edit"></i>
               </button>
               <!-- delete btn -->
-              <button type="button" class="delete-btn">
+              <button type="button" class="btn delete-btn">
                 <i class="fas fa-trash"></i>
               </button>
             </div>
 			`;
+
+		// Grab edit and delete buttons
+		const btns = element.querySelectorAll('.btn');
+		// Check the contains class if edit and delete
+		btns.forEach((btn) =>
+			btn.addEventListener('click', () => {
+				checkBtnClass(btn);
+			})
+		);
+
+		// add event listeners to both buttons;
+		const deleteBtn = element.querySelector('.delete-btn');
+		deleteBtn.addEventListener('click', deleteItem);
+		const editBtn = element.querySelector('.edit-btn');
+		editBtn.addEventListener('click', editItem);
 
 		// append child
 		list.appendChild(element);
@@ -90,6 +106,12 @@ function addItem(e) {
 		// console.log(editFlag + ' Please, add any item here.');
 	} else if (value && editFlag) {
 		console.log(editFlag + ' editing');
+		editElement.innerHTML = value;
+		// edited();
+		displayAlert('value changed', 'success');
+		// Edit local storage
+		editLocalStorage(editId, value);
+		setBackToDefault();
 	} else {
 		displayAlert(value + `is empty`, 'danger');
 	}
@@ -100,6 +122,18 @@ function addItem(e) {
 // 	alert.textContent = text;
 // 	alert.classList.add(`alert-${action}`);
 // }
+
+function edited() {
+	displayAlert('value changed', 'success');
+	// Edit local storage
+	editLocalStorage(editId, value);
+	setBackToDefault();
+}
+
+function deleted() {
+	displayAlert('item removed', 'danger');
+	setBackToDefault();
+}
 
 function displayAlert(...props) {
 	alert.textContent = props[0];
@@ -124,7 +158,7 @@ function clearItems() {
 	setBackToDefault();
 }
 
-// Reset form
+// Reset UI Display
 function setBackToDefault() {
 	grocery.value = '';
 	editFlag = false;
@@ -132,9 +166,51 @@ function setBackToDefault() {
 	submitBtn.textContent = 'submit';
 }
 
+// delete
+// function deleteItem(props) {
+// 	const item = props.element;
+// 	console.log(item + 'deleteItem');
+// 	const deleteTargetItem = item.currentTarget.parentElement.parentElement;
+// 	console.log(deleteTargetItem);
+// }
+
+function deleteItem(e) {
+	const element = e.currentTarget.parentElement.parentElement;
+	const id = element.dataset.id;
+	list.removeChild(element);
+	if (list.children.length === 0) {
+		container.classList.remove('show-container');
+	}
+	deleted();
+	console.log(element, id);
+}
+
+// edit
+function editItem(e) {
+	const element = e.currentTarget.parentElement.parentElement;
+	// set edit item
+	editElement = e.currentTarget.parentElement.previousElementSibling;
+
+	// update form value
+	grocery.value = editElement.innerHTML;
+	editFlag = true;
+	editID = element.dataset.id;
+	submitBtn.textContent = 'edit';
+	console.log(editElement, editID + 'editItem');
+}
+
 // ****** LOCAL STORAGE ******
 function addToLocalStorage(...props) {
 	console.log('added to local storage', props[0], props[1]);
 }
 
+function removeFromStorage(id) {}
+function editLocalStorage(id, value) {}
+
 // ****** SETUP ITEMS ******
+
+// ****** LOGICAL FUNCTION ******
+function checkBtnClass(props) {
+	// props.classList.contains('.edit-btn') ? editItem : deleteItem;
+	// props.classList.contains('edit-btn') ? editItem(props) : deleteItem(props);
+}

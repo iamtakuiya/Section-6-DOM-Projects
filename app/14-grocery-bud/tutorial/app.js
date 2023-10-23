@@ -58,6 +58,7 @@ function addItem(e) {
 	console.log(id);
 
 	if (value && !editFlag) {
+		createListItem(id, value)
 		// Create article and add class
 		const element = document.createElement('article');
 		element.classList.add('grocery-item');

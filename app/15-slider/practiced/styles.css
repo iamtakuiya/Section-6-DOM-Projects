@@ -1,0 +1,65 @@
+/* Apply styles to the main container */
+.image-slider {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	position: relative;
+}
+
+/* Style the image slider items */
+.image-slider__items {
+	display: flex;
+	transition: transform 0.3s ease-in-out;
+}
+
+.image-slider__item {
+	flex: 0 0 100%;
+	margin-right: 20px;
+}
+
+/* Style the image and description */
+.image-slider__image img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.image-slider__description {
+	background-color: #fff;
+	padding: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image-slider__title {
+	font-size: 1.2rem;
+	margin: 0;
+}
+
+.image-slider__caption {
+	color: #555;
+}
+
+/* Style the previous and next buttons */
+.btn-container {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.btn {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.btn--prev {
+	margin-right: 10px;
+}
+
+/* Add hover styles for buttons */
+.btn:hover {
+	background-color: #0056b3;
+}

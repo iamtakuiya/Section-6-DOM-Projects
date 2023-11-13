@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gallery Starter</title>
+		<!-- font-awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+		/>
+		<!-- styles -->
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<h2>gallery project starter</h2>
+
+		<section class="gallery gallery--city">
+			<img
+				src="./images/city-1.jpeg"
+				alt="City image"
+				class="gallery__img"
+				data-id="1"
+			/>
+		</section>
+
+		<!-- Modal -->
+		<div class="modal">
+			<button class="close">
+				<i class="fas fa-times"></i>
+			</button>
+			<div class="modal__content">
+				<div class="modal__view">
+					<button class="prev">
+						<i class="fas fa-chevron-left"></i>
+					</button>
+					<img
+						src="./images/city-1.jpeg"
+						alt="City image"
+						class="gallery__img"
+						data-id="1"
+					/>
+					<button class="prev">
+						<i class="fas fa-chevron-right"></i>
+					</button>
+				</div>
+
+				<div class="modal__title">
+					<h2>Title</h2>
+				</div>
+			</div>
+
+			<div class="modal__image-items">
+				<img
+					src="./images/city-1.jpeg"
+					alt="City image"
+					class="gallery__img"
+					data-id="1"
+				/>
+				<img
+					src="./images/city-1.jpeg"
+					alt="City image"
+					class="gallery__img"
+					data-id="1"
+				/>
+			</div>
+		</div>
+
+		<script src="app.js"></script>
+	</body>
+</html>

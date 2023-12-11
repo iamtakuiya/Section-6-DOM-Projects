@@ -17,7 +17,6 @@ const renderArticle = articles
 
 		// format date
 		const formatDate = moment(date).format('MMM do, YYYY');
-		console.log(formatDate);
 
 		return `
   			<h2 class=${title}></h2>

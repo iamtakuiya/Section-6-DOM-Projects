@@ -1,4 +1,4 @@
-const URL = 'https://icanhazdadjoke.co/';
+const URL = 'https://icanhazdadjoke.com/';
 
 // Setup DOM element
 const btn = document.querySelector('.btn');
